@@ -300,7 +300,7 @@ def get_waka_time_stats():
         if showCommit.lower() in truthy:
             empty = False
             stats = stats + generate_commit_list(tz=data['data']['timezone']) + '\n\n'
-        stats += '<img align=\"left\" src=\"https://raw.githubusercontent.com/.../images/19kiur.gif\" >'
+        stats += '<img align=\"left\" src=\"https://raw.githubusercontent.com/simonpham/simonpham/master/assets/images/19kiur.gif\" >'
         stats += '📊 **' + 'This Month I Spend My Time On' + '** \n\n'
         stats += '```text\n'
         if showTimeZone.lower() in truthy:
