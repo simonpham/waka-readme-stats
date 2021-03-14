@@ -289,8 +289,8 @@ def generate_commit_list(tz):
 def get_waka_time_stats():
     stats = ''
     request = requests.get(
-        f"https://wakatime.com/api/v1/users/current/stats/last_7_days?api_key={waka_key}")
-    no_activity = translate["No Activity Tracked This Week"]
+        f"https://wakatime.com/api/v1/users/current/stats/last_30_days?api_key={waka_key}")
+    no_activity = translate["No Activity Tracked This Month"]
 
     if request.status_code == 401:
         print("Error With WAKA time API returned " + str(request.status_code) + " Response " + str(request.json()))
@@ -300,8 +300,8 @@ def get_waka_time_stats():
         if showCommit.lower() in truthy:
             empty = False
             stats = stats + generate_commit_list(tz=data['data']['timezone']) + '\n\n'
-
-        stats += '📊 **' + translate['This Week I Spend My Time On'] + '** \n\n'
+        stats += '<img align=\"left\" src=\"https://raw.githubusercontent.com/.../images/19kiur.gif\" >'
+        stats += '📊 **' + translate['This Month I Spend My Time On'] + '** \n\n'
         stats += '```text\n'
         if showTimeZone.lower() in truthy:
             empty = False
